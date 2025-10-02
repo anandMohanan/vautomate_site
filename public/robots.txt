@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://vautomate.ai/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 1
+
+# Block access to admin areas if they exist
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Allow access to CSS and JS files for better rendering
+Allow: /_next/static/css/
+Allow: /_next/static/js/
+Allow: /_next/static/media/
+
+# Block common sensitive files
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /yarn.lock
+Disallow: /pnpm-lock.yaml
+Disallow: /tsconfig.json
+Disallow: /next.config.ts
+Disallow: /tailwind.config.ts
+Disallow: /postcss.config.mjs
+Disallow: /.env*
+Disallow: /.git*
+Disallow: /README.md
