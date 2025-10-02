@@ -2,30 +2,12 @@ import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const footerSections = [
-  {
-    title: "Product",
-    links: [
-      { name: "Features", href: "/features" },
-      { name: "Pricing", href: "/pricing" },
-      { name: "Integrations", href: "/integrations" },
-      { name: "Changelog", href: "/changelog" }
-    ]
-  },
-  {
-    title: "Company",
-    links: [
-      { name: "About", href: "/about" },
-      { name: "Blog", href: "/blog" },
-      { name: "Careers", href: "/careers" },
-      { name: "Contact", href: "/contact" }
-    ]
-  },
+ 
+ 
   {
     title: "Legal",
     links: [
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms of Service", href: "/terms" },
-      { name: "Security", href: "/security" }
+      { name: "Privacy Policy", href: "/privacy-policy" },
     ]
   }
 ];

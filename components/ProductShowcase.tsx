@@ -116,19 +116,23 @@ export default function ProductShowcase() {
               {/* Image Showcase (60%) */}
               <Dialog>
                 <DialogTrigger asChild>
-                  <Card className="relative flex-[0.6] h-[550px] rounded-2xl border-2 border-border overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
-                    <Image
-                      src={section.imageLink}
-                      alt={section.imagePlaceholder}
-                      fill
-                      className="object-cover object-center"
-                    />
-                    <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
-                      <div className="bg-black/70 text-white px-4 py-2 rounded-lg text-sm font-medium">
-                        Click to view larger
-                      </div>
-                    </div>
-                  </Card>
+                <Card
+  className="relative w-full h-64 md:flex-[0.6] md:h-[550px] rounded-2xl border-2 border-border overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+>
+  <Image
+    src={section.imageLink}
+    alt={section.imagePlaceholder}
+    fill
+    className="object-cover object-center"
+    sizes="(max-width: 768px) 100vw, 60vw"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+    <div className="bg-black/70 text-white px-4 py-2 rounded-lg text-sm font-medium">
+      Click to view larger
+    </div>
+  </div>
+</Card>
                 </DialogTrigger>
                 <DialogContent className="max-w-4xl max-h-[90vh] p-0 bg-black/95 border-0">
                   <DialogTitle className="sr-only">
