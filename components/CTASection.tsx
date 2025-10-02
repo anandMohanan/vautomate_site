@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
 export default function CTASection() {
@@ -23,9 +24,9 @@ export default function CTASection() {
             Start Now
           </Link>
           </Button>
-          <Button variant="outline" size="lg">
+          <Link href={"https://calendly.com/ashishbindal4/demo-automate-your-shopify-store-with-vautomate"} className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
             Schedule Demo
-          </Button>
+          </Link>
         </div>
       </div>
     </section>

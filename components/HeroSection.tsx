@@ -1,7 +1,8 @@
 import { ArrowRight, BarChart3, Target, MessageSquare, Zap } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 export default function HeroSection() {
 
@@ -45,14 +46,9 @@ export default function HeroSection() {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button variant="secondary" size="lg" asChild>
-                <Link href="https://calendly.com/ashishbindal4/demo-automate-your-shopify-store-with-vautomate"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Schedule a demo call to learn more about Vautomate">
-                  Schedule Demo
-                </Link>
-              </Button>
+              <Link href={"https://calendly.com/ashishbindal4/demo-automate-your-shopify-store-with-vautomate"} className={cn(buttonVariants({ variant: "secondary", size: "lg" }))}>
+                Schedule Demo
+              </Link>
             </div>
 
             {/* Key Statistics */}
