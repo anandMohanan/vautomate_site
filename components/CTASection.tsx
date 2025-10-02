@@ -27,7 +27,6 @@ export default function CTASection() {
             Schedule Demo
           </Button>
         </div>
-        <p className="text-sm text-primary-foreground/80 mt-8">14-day free trial • No credit card required</p>
       </div>
     </section>
   );
