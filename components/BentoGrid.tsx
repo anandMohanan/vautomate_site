@@ -18,7 +18,7 @@ const features = [
       "Get comprehensive reports on performance, growth trends, and channel metrics delivered every week without lifting a finger.",
     icon: BarChart3,
     size: "large",
-    image: "http://localhost:3000/automated.png",
+    image: "http://vautomate.ai/automated.png",
   },
   {
     title: "Conversational Analytics",
