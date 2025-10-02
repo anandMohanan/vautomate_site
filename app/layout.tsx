@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: 'Vautomate - AI-Powered E-commerce Growth Intelligence',
     template: '%s | Vautomate'
   },
-  description: 'Automate your e-commerce growth with AI-powered insights from Shopify, Meta & Google Analytics. Get weekly actionable projects and smart execution for 87% average growth.',
+  description: 'Automate your e-commerce growth with AI-powered insights from Shopify, Meta & Google Analytics. Get weekly actionable projects and smart execution for 97% average growth.',
   keywords: [
     'AI e-commerce',
     'Shopify automation',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: 'Vautomate',
     images: [
       {
-        url: '/og-image.png',
+        url: '/opengraph-image.png',
         width: 1200,
         height: 630,
         alt: 'Vautomate - AI Growth Engine for E-commerce',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: 'Vautomate - AI-Powered E-commerce Growth Intelligence',
     description: 'Automate your e-commerce growth with AI-powered insights from Shopify, Meta & Google Analytics. Get weekly actionable projects and smart execution for 87% average growth.',
     creator: '@vautomate',
-    images: ['/og-image.png'],
+    images: ['/opengraph-image.png'],
   },
   robots: {
     index: true,
