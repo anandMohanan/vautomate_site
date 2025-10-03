@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import type LocomotiveScroll from 'locomotive-scroll';
-
+import Image from "next/image";
 // Add type
 declare global {
   interface Window {
@@ -54,8 +54,8 @@ export default function Navbar() {
       <div className="px-4 sm:px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-primary-foreground rounded-xl flex items-center justify-center shadow-sm transform transition-transform hover:scale-105">
-            <Sparkles className="w-5 h-5 text-primary" />
+          <div className="w-10 h-10 bg-primary-foreground border-none flex items-center justify-center  transform transition-transform hover:scale-105">
+<Image src="/logo.png" alt="Vautomate" width={30} height={30} />
           </div>
           <span className="text-xl text-black tracking-tight font-serif">
             Vautomate
