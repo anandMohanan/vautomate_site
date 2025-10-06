@@ -42,10 +42,11 @@ export default function TallyProvider({ children }: TallyProviderProps) {
     // Check if Tally is available
     if (window.Tally) {
       const popupOptions = {
-        layout: 'modal',
+        layout: 'default',
         width: 500,
         hideTitle: true,
         autoClose: 10000,
+        alignLeft: false,
         onOpen: () => {
           setIsLoading(false);
           setButtonId(null);
@@ -68,10 +69,11 @@ export default function TallyProvider({ children }: TallyProviderProps) {
       setTimeout(() => {
         if (window.Tally) {
           window.Tally.openPopup(formId, {
-            layout: 'modal',
+            layout: 'default',
             width: 500,
             hideTitle: true,
             autoClose: 10000,
+            alignLeft: false,
             onOpen: () => {
               setIsLoading(false);
               setButtonId(null);
