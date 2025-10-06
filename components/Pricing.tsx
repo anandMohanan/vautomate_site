@@ -1,10 +1,11 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import TallyButton from "@/components/ui/TallyButton";
 
 const pricing = {
   name: "Limited Time Offer",
-  price: "$19",
+  price: "$49",
   description: "/mo",
   note: "(For now, everything is available – might change in the future)",
   features: [
@@ -63,15 +64,9 @@ export default function Pricing() {
             </ul>
 
               {/* CTA */}
-              <Button
-                className="w-full"
-                data-tally-open="w2Qv0e"
-                data-tally-width="500"
-                data-tally-hide-title="1"
-                data-tally-auto-close="10000"
-              >
+              <TallyButton className="w-full">
                 Join Waitlist
-              </Button>
+              </TallyButton>
           </CardContent>
         </Card>
       </div>

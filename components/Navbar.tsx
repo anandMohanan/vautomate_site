@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import type LocomotiveScroll from 'locomotive-scroll';
 import Image from "next/image";
+import TallyButton from "@/components/ui/TallyButton";
 // Add type
 declare global {
   interface Window {
@@ -76,15 +77,9 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-foreground transition-all duration-300 group-hover:w-full"></span>
             </button>
           ))}
-          <Button
-            data-tally-open="w2Qv0e"
-            data-tally-width="500"
-            data-tally-hide-title="1"
-            data-tally-auto-close="10000"
-            aria-label="Get started with Vautomate"
-          >
+          <TallyButton aria-label="Get started with Vautomate">
             Join Waitlist
-          </Button>
+          </TallyButton>
         </div>
 
         {/* Mobile Btn */}
