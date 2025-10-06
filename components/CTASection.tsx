@@ -20,10 +20,14 @@ export default function CTASection() {
           Join hundreds of D2C brands growing faster with AI-powered insights
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" asChild>
-            <Link href={"https://app.vautomate.ai/api/auth/register"}>
-            Start Now
-          </Link>
+          <Button
+            size="lg"
+            data-tally-open="w2Qv0e"
+            data-tally-width="500"
+            data-tally-hide-title="1"
+            data-tally-auto-close="10000"
+          >
+            Join Waitlist
           </Button>
           <Link href={"https://calendly.com/ashishbindal4/demo-automate-your-shopify-store-with-vautomate"} className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
             Schedule Demo

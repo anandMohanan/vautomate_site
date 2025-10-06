@@ -40,11 +40,17 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4 mb-12" role="group" aria-label="Call to action buttons">
-              <Button size="lg" className="group flex" asChild>
-                <Link href="https://app.vautomate.ai/api/auth/register" aria-label="Start your free trial of Vautomate AI growth platform">
-                  Start Free Trial
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </Link>
+              <Button
+                size="lg"
+                className="group flex"
+                data-tally-open="w2Qv0e"
+                data-tally-width="500"
+                data-tally-hide-title="1"
+                data-tally-auto-close="10000"
+                aria-label="Start your free trial of Vautomate AI growth platform"
+              >
+                Join Waitlist
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
               <Link href={"https://calendly.com/ashishbindal4/demo-automate-your-shopify-store-with-vautomate"} className={cn(buttonVariants({ variant: "secondary", size: "lg" }))}>
                 Schedule Demo

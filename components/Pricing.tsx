@@ -62,10 +62,16 @@ export default function Pricing() {
               ))}
             </ul>
 
-            {/* CTA */}
-            <Button className="w-full">
-              {pricing.buttonText}
-            </Button>
+              {/* CTA */}
+              <Button
+                className="w-full"
+                data-tally-open="w2Qv0e"
+                data-tally-width="500"
+                data-tally-hide-title="1"
+                data-tally-auto-close="10000"
+              >
+                Join Waitlist
+              </Button>
           </CardContent>
         </Card>
       </div>
