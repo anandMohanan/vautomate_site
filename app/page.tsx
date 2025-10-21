@@ -52,7 +52,7 @@ export default function LandingPage() {
       className="relative w-full min-h-screen bg-white"
     >
       <div data-scroll-section>
-        <Navbar />
+        {/* <Navbar /> */}
         <ProblemSection
           title="E-commerce Growth is Broken"
           description="Most e-commerce businesses and agencies struggle with manual optimization, scattered data, and missed opportunities that cost thousands in lost revenue every month."

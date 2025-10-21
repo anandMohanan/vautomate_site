@@ -21,7 +21,7 @@ interface ProblemSectionProps {
 
 export default function ProblemSection({ title, description, problems, stats }: ProblemSectionProps) {
   return (
-    <section className="pt-40 pb-20 px-6 bg-gradient-to-b from-red-50/50 to-white">
+    <section className="pt-40 pb-20 px-6 bg-gradient-to-b from-red-50/50 to-white" data-scroll data-scroll-speed="2">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 text-red-700 rounded-full text-sm font-medium mb-8 border border-red-200">
