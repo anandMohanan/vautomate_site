@@ -10,7 +10,10 @@ import {
   BarChart3,
   Funnel,
   ArrowRight,
-  Zap
+  Zap,
+  Palette,
+  DollarSign,
+  Eye
 } from 'lucide-react';
 
 const useCases = [
@@ -61,6 +64,30 @@ const useCases = [
     icon: Funnel,
     color: 'bg-red-500',
     gradient: 'from-red-500 to-red-600'
+  },
+  {
+    title: 'Automated Creative Generation',
+    description: 'Generate and deploy Meta ad creatives automatically using top-performing content and brand tone.',
+    href: '/automated-creative-generation',
+    icon: Palette,
+    color: 'bg-purple-500',
+    gradient: 'from-purple-500 to-purple-600'
+  },
+  {
+    title: 'SKU-Level Pricing & Promotions',
+    description: 'Automate inventory-based pricing and create targeted discount campaigns for optimal inventory turnover.',
+    href: '/sku-pricing-promotions',
+    icon: DollarSign,
+    color: 'bg-green-500',
+    gradient: 'from-green-500 to-green-600'
+  },
+  {
+    title: 'Competitor Monitoring & Bidding',
+    description: 'Monitor competitor pricing and automatically adjust Google Ads bids to maintain competitive advantage.',
+    href: '/competitor-monitoring-bidding',
+    icon: Eye,
+    color: 'bg-blue-500',
+    gradient: 'from-blue-500 to-blue-600'
   }
 ];
 
