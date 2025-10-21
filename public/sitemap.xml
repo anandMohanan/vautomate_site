@@ -6,7 +6,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://vautomate.ai/</loc>
+    <loc>https://growth.vautomate.ai/</loc>
     <lastmod>2024-12-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- Pricing Page -->
   <url>
-    <loc>https://vautomate.ai/pricing</loc>
+    <loc>https://growth.vautomate.ai/pricing</loc>
     <lastmod>2024-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
   <!-- About Page -->
   <url>
-    <loc>https://vautomate.ai/about</loc>
+    <loc>https://growth.vautomate.ai/about</loc>
     <lastmod>2024-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30,7 +30,7 @@
 
   <!-- Features Page -->
   <url>
-    <loc>https://vautomate.ai/features</loc>
+    <loc>https://growth.vautomate.ai/features</loc>
     <lastmod>2024-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -38,7 +38,7 @@
 
   <!-- Blog Page -->
   <url>
-    <loc>https://vautomate.ai/blog</loc>
+    <loc>https://growth.vautomate.ai/blog</loc>
     <lastmod>2024-12-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -46,7 +46,7 @@
 
   <!-- Contact Page -->
   <url>
-    <loc>https://vautomate.ai/contact</loc>
+    <loc>https://growth.vautomate.ai/contact</loc>
     <lastmod>2024-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -54,7 +54,7 @@
 
   <!-- Terms of Service -->
   <url>
-    <loc>https://vautomate.ai/terms</loc>
+    <loc>https://growth.vautomate.ai/terms</loc>
     <lastmod>2024-12-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -62,7 +62,7 @@
 
   <!-- Privacy Policy -->
   <url>
-    <loc>https://vautomate.ai/privacy</loc>
+    <loc>https://growth.vautomate.ai/privacy</loc>
     <lastmod>2024-12-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

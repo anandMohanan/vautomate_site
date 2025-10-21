@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://vautomate.ai'
+  const baseUrl = 'https://growth.vautomate.ai'
 
   return [
     {

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import { ArrowRight, TrendingUp, BarChart3, FileText, ShoppingBag, Users, DollarSign, Calendar, Clock, Zap, CheckCircle } from 'lucide-react';
+import ProblemSection from "@/components/ProblemSection";
+import { ArrowRight, TrendingUp, BarChart3, FileText, ShoppingBag, Users, DollarSign, Calendar, Clock, Zap, CheckCircle, AlertTriangle, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'Fast Ecommerce Analytics Reporting | Automated Business Intelligence',
     description: 'Generate comprehensive ecommerce reports in seconds with multi-source data integration and AI-powered insights.',
     type: 'website',
-    url: 'https://vautomate.ai/fast-ecommerce-analytics',
+    url: 'https://growth.vautomate.ai/fast-ecommerce-analytics',
     images: [
       {
         url: '/opengraph-image.png',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   alternates: {
-    canonical: 'https://vautomate.ai/fast-ecommerce-analytics',
+    canonical: 'https://growth.vautomate.ai/fast-ecommerce-analytics',
   },
 }
 
@@ -51,6 +52,34 @@ export default function FastEcommerceAnalyticsPage() {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
+
+      {/* Problem Section */}
+      <ProblemSection
+        title="Analytics Reporting is Slow & Manual"
+        description="Most e-commerce teams and agencies spend hours compiling reports from multiple client sources, missing real-time insights that could drive immediate growth opportunities across portfolios."
+        problems={[
+          {
+            icon: <Clock className="w-6 h-6 text-red-600" />,
+            title: "Time-Consuming Reports",
+            description: "Manual compilation of data from Shopify, Google Analytics, and ad platforms across client accounts takes hours each week."
+          },
+          {
+            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
+            title: "Delayed Insights",
+            description: "By the time reports are ready, the data is often outdated and opportunities for quick wins across client portfolios are missed."
+          },
+          {
+            icon: <BarChart3 className="w-6 h-6 text-red-600" />,
+            title: "Scattered Data Sources",
+            description: "Critical business metrics live across disconnected platforms and client accounts, making comprehensive analysis nearly impossible."
+          }
+        ]}
+        stats={[
+          { number: "8hrs", label: "weekly reporting time" },
+          { number: "24-48", label: "hrs delayed insights" },
+          { number: "12", label: "data sources to manage" }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import { ArrowRight, TrendingUp, Target, BarChart3, Zap, CheckCircle, Users, DollarSign } from 'lucide-react';
+import ProblemSection from "@/components/ProblemSection";
+import { ArrowRight, TrendingUp, Target, BarChart3, Zap, CheckCircle, Users, DollarSign, AlertTriangle, TrendingDown, Clock } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'Cross-Channel Ad Performance Analysis | GA4 + Meta + Google Ads',
     description: 'Unify your ad performance across all channels with AI-powered insights. Get instant ROAS tracking and automated optimization.',
     type: 'website',
-    url: 'https://vautomate.ai/cross-channel-ad-performance',
+    url: 'https://growth.vautomate.ai/cross-channel-ad-performance',
     images: [
       {
         url: '/opengraph-image.png',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   alternates: {
-    canonical: 'https://vautomate.ai/cross-channel-ad-performance',
+    canonical: 'https://growth.vautomate.ai/cross-channel-ad-performance',
   },
 }
 
@@ -51,6 +52,34 @@ export default function CrossChannelAdPerformancePage() {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
+
+      {/* Problem Section */}
+      <ProblemSection
+        title="Ad Performance Tracking is Fragmented"
+        description="Managing campaigns across Meta and Google Ads without unified insights leads to overspending, missed opportunities, and inaccurate ROAS calculations across client accounts."
+        problems={[
+          {
+            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
+            title: "Inaccurate ROAS Tracking",
+            description: "Without unified attribution across client accounts, you're making decisions based on incomplete data, leading to poor campaign performance."
+          },
+          {
+            icon: <Clock className="w-6 h-6 text-red-600" />,
+            title: "Manual Campaign Management",
+            description: "Spending hours daily monitoring and adjusting campaigns across multiple client platforms instead of focusing on strategic growth."
+          },
+          {
+            icon: <DollarSign className="w-6 h-6 text-red-600" />,
+            title: "Wasted Ad Spend",
+            description: "Underperforming campaigns continue running across client accounts because you can't identify them quickly enough across channels."
+          }
+        ]}
+        stats={[
+          { number: "40%", label: "ROAS inaccuracy" },
+          { number: "5hrs", label: "daily monitoring" },
+          { number: "$8K", label: "monthly waste" }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{
@@ -182,7 +211,7 @@ export default function CrossChannelAdPerformancePage() {
                   <div className="flex gap-4 justify-end">
                     <div className="flex-1 p-4 bg-primary rounded-2xl">
                       <p className="text-white">Here are your top-performing campaigns from last month:</p>
-                      <div className="mt-3 space-y-2">
+                      <div className="mt-3 space-y-2 bg-white p-4 rounded-lg">
                         <div className="flex justify-between items-center">
                           <span className="text-sm">Meta - Summer Sale Campaign</span>
                           <span className="font-semibold text-green-400">ROAS: 5.2x</span>

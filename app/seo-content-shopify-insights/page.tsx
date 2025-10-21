@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import { ArrowRight, TrendingUp, Search, FileText, ShoppingBag, BarChart3, Zap, CheckCircle, Target, Lightbulb, Globe } from 'lucide-react';
+import ProblemSection from "@/components/ProblemSection";
+import { ArrowRight, TrendingUp, Search, FileText, ShoppingBag, BarChart3, Zap, CheckCircle, Target, Lightbulb, Globe, TrendingDown, Clock, AlertTriangle } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'SEO & Content Insights | Shopify Store Intelligence',
     description: 'Transform your Shopify store with AI-powered SEO insights. Discover content opportunities and drive organic traffic growth.',
     type: 'website',
-    url: 'https://vautomate.ai/seo-content-shopify-insights',
+    url: 'https://growth.vautomate.ai/seo-content-shopify-insights',
     images: [
       {
         url: '/opengraph-image.png',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   alternates: {
-    canonical: 'https://vautomate.ai/seo-content-shopify-insights',
+    canonical: 'https://growth.vautomate.ai/seo-content-shopify-insights',
   },
 }
 
@@ -51,6 +52,34 @@ export default function SEOContentShopifyInsightsPage() {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
+
+      {/* Problem Section */}
+      <ProblemSection
+        title="SEO & Content Creation is Disconnected"
+        description="Most e-commerce businesses and agencies create content in isolation, missing critical insights about which client products have sales potential but lack organic visibility."
+        problems={[
+          {
+            icon: <Search className="w-6 h-6 text-red-600" />,
+            title: "Content Gaps",
+            description: "High-potential client products remain invisible because you don't know which keywords and topics will drive organic traffic across portfolios."
+          },
+          {
+            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
+            title: "Missed Organic Opportunities",
+            description: "Client products with proven sales data aren't optimized for search, leaving organic growth potential untapped across accounts."
+          },
+          {
+            icon: <Clock className="w-6 h-6 text-red-600" />,
+            title: "Inefficient Content Strategy",
+            description: "Creating content across client accounts without data-driven insights leads to poor ROI and wasted effort on low-impact topics."
+          }
+        ]}
+        stats={[
+          { number: "67%", label: "untapped organic traffic" },
+          { number: "40%", label: "content inefficiency" },
+          { number: "12hrs", label: "wasted weekly" }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{
@@ -212,8 +241,8 @@ export default function SEOContentShopifyInsightsPage() {
                     <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
                       M
                     </div>
-                    <div className="flex-1 p-4 bg-slate-800 rounded-2xl">
-                      <p className="text-slate-200">"Generate keyword recommendations and a new blog brief to drive more organic visits."</p>
+                    <div className="flex-1 p-4 rounded-2xl">
+                      <p className="text-primary">"Generate keyword recommendations and a new blog brief to drive more organic visits."</p>
                     </div>
                   </div>
 

@@ -9,8 +9,8 @@ export default function JsonLd() {
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Vautomate",
-              "url": "https://vautomate.ai",
-              "logo": "https://vautomate.ai/logo.png",
+              "url": "https://growth.vautomate.ai",
+              "logo": "https://growth.vautomate.ai/logo.png",
               "description": "AI-powered e-commerce growth intelligence platform that automates growth for Shopify stores through AI insights and smart execution.",
               "foundingDate": "2024",
               "sameAs": [
@@ -64,7 +64,7 @@ export default function JsonLd() {
                 "24/7 AI monitoring",
                 "Growth intelligence reports"
               ],
-              "screenshot": "https://vautomate.ai/screenshot.png",
+              "screenshot": "https://growth.vautomate.ai/screenshot.png",
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.8",
@@ -103,7 +103,7 @@ export default function JsonLd() {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Vautomate",
-              "url": "https://vautomate.ai",
+              "url": "https://growth.vautomate.ai",
               "description": "AI-powered e-commerce growth intelligence platform",
               "inLanguage": "en-US",
               "copyrightHolder": {
@@ -114,7 +114,7 @@ export default function JsonLd() {
                 "@type": "SearchAction",
                 "target": {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://vautomate.ai/search?q={search_term_string}"
+                  "urlTemplate": "https://growth.vautomate.ai/search?q={search_term_string}"
                 },
                 "query-input": "required name=search_term_string"
               }

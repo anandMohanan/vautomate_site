@@ -3,6 +3,7 @@ import { Sparkles, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type LocomotiveScroll from 'locomotive-scroll';
 import Image from "next/image";
 import TallyButton from "@/components/ui/TallyButton";
@@ -16,6 +17,8 @@ declare global {
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const timer = setTimeout(() => setMounted(true), 50);
@@ -67,7 +70,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {["Features", "Product", "Pricing"].map((item) => (
+          {isHomePage && ["Features", "Product", "Pricing"].map((item) => (
             <button
               key={item}
               onClick={() =>
@@ -97,7 +100,7 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden px-4 pb-4">
           <div className="flex flex-col gap-3 pt-2 border-t border-primary/30">
-            {["Features", "Product", "Pricing"].map((item) => (
+            {isHomePage && ["Features", "Product", "Pricing"].map((item) => (
               <button
                 key={item}
                 onClick={() =>
@@ -109,7 +112,7 @@ export default function Navbar() {
               </button>
             ))}
             <Button className="bg-primary-foreground text-primary mt-2" asChild>
-              <Link href="https://app.vautomate.ai/api/auth/register" aria-label="Get started with Vautomate">
+              <Link href="https://calendly.com/ashishbindal4/demo-automate-your-shopify-store-with-vautomate" aria-label="Get started with Vautomate">
                 Get Started
               </Link>
             </Button>

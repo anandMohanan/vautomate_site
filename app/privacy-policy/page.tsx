@@ -196,7 +196,7 @@ export default function PrivacyPolicy() {
               If you have any questions about this Privacy Policy, please don't hesitate to contact us:
             </p>
             <p className="text-gray-700 font-medium">
-              hey@vautomate.ai
+              hey@growth.vautomate.ai
             </p>
           </section>
 

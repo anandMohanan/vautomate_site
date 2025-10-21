@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import { ArrowRight, Palette, Image, Zap, CheckCircle, Target, Bot, Download, Upload, TrendingUp } from 'lucide-react';
+import ProblemSection from "@/components/ProblemSection";
+import { ArrowRight, Palette, Image, Zap, CheckCircle, Target, Bot, Download, Upload, TrendingUp, AlertTriangle, Clock, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'Automated Creative Generation & Deployment | AI Creative Intelligence',
     description: 'Transform your creative workflow with AI-powered generation and deployment. Create winning ad creatives automatically.',
     type: 'website',
-    url: 'https://vautomate.ai/automated-creative-generation',
+    url: 'https://growth.vautomate.ai/automated-creative-generation',
     images: [
       {
         url: '/opengraph-image.png',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   alternates: {
-    canonical: 'https://vautomate.ai/automated-creative-generation',
+    canonical: 'https://growth.vautomate.ai/automated-creative-generation',
   },
 }
 
@@ -51,6 +52,34 @@ export default function AutomatedCreativeGenerationPage() {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
+
+      {/* Problem Section */}
+      <ProblemSection
+        title="Creative Production is Slow & Expensive"
+        description="Creating effective ad creatives, social media posts, and email campaigns takes days of design work and thousands in creative costs."
+        problems={[
+          {
+            icon: <Clock className="w-6 h-6 text-red-600" />,
+            title: "Time-Intensive Process",
+            description: "Designers spend days creating variations and iterating based on performance data, slowing campaign launches."
+          },
+          {
+            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
+            title: "High Creative Costs",
+            description: "Professional design services and stock imagery eat into marketing budgets, especially for testing multiple variants."
+          },
+          {
+            icon: <Palette className="w-6 h-6 text-red-600" />,
+            title: "Inconsistent Branding",
+            description: "Maintaining brand consistency across all channels becomes challenging with manual creative processes."
+          }
+        ]}
+        stats={[
+          { number: "3-5", label: "days per creative" },
+          { number: "$2K", label: "avg creative cost" },
+          { number: "40%", label: "brand inconsistency" }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{

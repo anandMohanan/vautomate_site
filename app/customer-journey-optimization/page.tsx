@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import { ArrowRight, TrendingUp, Funnel, Eye, ShoppingCart, CreditCard, Users, Target, Lightbulb, Zap, CheckCircle, MousePointer } from 'lucide-react';
+import ProblemSection from "@/components/ProblemSection";
+import { ArrowRight, TrendingUp, Funnel, Eye, ShoppingCart, CreditCard, Users, Target, Lightbulb, Zap, CheckCircle, MousePointer, AlertTriangle, Clock, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'Customer Journey Optimization | Conversion Funnel Intelligence',
     description: 'Optimize every step of your customer journey with AI-powered analysis and actionable recommendations for maximum conversions.',
     type: 'website',
-    url: 'https://vautomate.ai/customer-journey-optimization',
+    url: 'https://growth.vautomate.ai/customer-journey-optimization',
     images: [
       {
         url: '/opengraph-image.png',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   alternates: {
-    canonical: 'https://vautomate.ai/customer-journey-optimization',
+    canonical: 'https://growth.vautomate.ai/customer-journey-optimization',
   },
 }
 
@@ -51,6 +52,34 @@ export default function CustomerJourneyOptimizationPage() {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
+
+      {/* Problem Section */}
+      <ProblemSection
+        title="Customer Journey is Complex & Opaque"
+        description="Most e-commerce stores struggle to understand how customers navigate their site, leading to poor conversion rates and missed revenue opportunities."
+        problems={[
+          {
+            icon: <Funnel className="w-6 h-6 text-red-600" />,
+            title: "Conversion Leaks",
+            description: "Customers abandon carts and exit pages without clear understanding of why or where in the journey it happens."
+          },
+          {
+            icon: <Eye className="w-6 h-6 text-red-600" />,
+            title: "Invisible Customer Behavior",
+            description: "Traditional analytics provide surface-level data but miss the nuanced paths customers take through your store."
+          },
+          {
+            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
+            title: "Generic Optimization",
+            description: "Making changes based on assumptions rather than actual customer journey data leads to ineffective improvements."
+          }
+        ]}
+        stats={[
+          { number: "68%", label: "avg cart abandonment" },
+          { number: "73%", label: "bounce rate" },
+          { number: "$2.1T", label: "lost e-commerce revenue" }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{

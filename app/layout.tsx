@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://vautomate.ai'),
+  metadataBase: new URL('https://growth.vautomate.ai'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://vautomate.ai',
+    url: 'https://growth.vautomate.ai',
     title: 'Vautomate - AI-Powered E-commerce Growth Intelligence',
     description: 'Automate your e-commerce growth with AI-powered insights from Shopify, Meta & Google Analytics. Get weekly actionable projects and smart execution for 87% average growth.',
     siteName: 'Vautomate',

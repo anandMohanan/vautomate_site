@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import { ArrowRight, TrendingUp, Target, BarChart3, Zap, CheckCircle, Users, DollarSign, Settings, Brain, Clock } from 'lucide-react';
+import ProblemSection from "@/components/ProblemSection";
+import { ArrowRight, TrendingUp, Target, BarChart3, Zap, CheckCircle, Users, DollarSign, Settings, Brain, Clock, AlertTriangle, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'Automated Campaign Optimization | AI-Powered Ad Intelligence',
     description: 'Transform your campaign performance with AI-powered optimization suggestions. Get automated bid adjustments and creative improvements.',
     type: 'website',
-    url: 'https://vautomate.ai/automated-campaign-optimization',
+    url: 'https://growth.vautomate.ai/automated-campaign-optimization',
     images: [
       {
         url: '/opengraph-image.png',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   alternates: {
-    canonical: 'https://vautomate.ai/automated-campaign-optimization',
+    canonical: 'https://growth.vautomate.ai/automated-campaign-optimization',
   },
 }
 
@@ -51,6 +52,34 @@ export default function AutomatedCampaignOptimizationPage() {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
+
+      {/* Problem Section */}
+      <ProblemSection
+        title="Campaign Optimization is Manual & Inefficient"
+        description="Most marketing teams and agencies spend hours manually analyzing campaign performance across client accounts, making optimization decisions based on gut feeling rather than data-driven insights."
+        problems={[
+          {
+            icon: <Clock className="w-6 h-6 text-red-600" />,
+            title: "Time-Consuming Analysis",
+            description: "Hours spent daily reviewing performance metrics across multiple client campaigns instead of strategic planning."
+          },
+          {
+            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
+            title: "Suboptimal Performance",
+            description: "Missed opportunities for bid adjustments, creative improvements, and targeting optimizations that could boost ROI across client portfolios."
+          },
+          {
+            icon: <Brain className="w-6 h-6 text-red-600" />,
+            title: "Gut-Based Decisions",
+            description: "Making optimization choices without comprehensive data analysis across client accounts leads to inconsistent results and wasted budget."
+          }
+        ]}
+        stats={[
+          { number: "8hrs", label: "daily analysis time" },
+          { number: "23%", label: "missed optimizations" },
+          { number: "$15K", label: "monthly budget waste" }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{

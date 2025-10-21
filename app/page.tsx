@@ -1,5 +1,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
+import ProblemSection from "@/components/ProblemSection";
 import HeroSection from "@/components/HeroSection";
 import BentoGrid from "@/components/BentoGrid";
 import ProductShowcase from "@/components/ProductShowcase";
@@ -13,6 +14,7 @@ import Footer from "@/components/Footer";
 import { useEffect, useRef } from "react";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import type LocomotiveScroll from 'locomotive-scroll';
+import { TrendingDown, Clock, DollarSign } from 'lucide-react';
 
 export default function LandingPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -51,6 +53,35 @@ export default function LandingPage() {
     >
       <div data-scroll-section>
         <Navbar />
+        <ProblemSection
+          title="E-commerce Growth is Broken"
+          description="Most e-commerce businesses and agencies struggle with manual optimization, scattered data, and missed opportunities that cost thousands in lost revenue every month."
+          problems={[
+            {
+              icon: <TrendingDown className="w-6 h-6 text-red-600" />,
+              title: "Stagnant Growth",
+              description: "87% of e-commerce businesses see less than 10% monthly growth, leaving massive revenue potential untapped across client portfolios."
+            },
+            {
+              icon: <Clock className="w-6 h-6 text-red-600" />,
+              title: "Time-Consuming Manual Work",
+              description: "Teams spend 20+ hours weekly on repetitive optimization tasks across multiple client stores that could be automated with AI."
+            },
+            {
+              icon: <DollarSign className="w-6 h-6 text-red-600" />,
+              title: "Scattered Data Insights",
+              description: "Critical insights from Shopify, Meta, and Google Analytics live in silos across client accounts, making informed decisions nearly impossible."
+            }
+          ]}
+          stats={[
+            { number: "87%", label: "of businesses stagnant" },
+            { number: "20hrs", label: "wasted weekly" },
+            { number: "$12K", label: "avg monthly loss" }
+          ]}
+        />
+      </div>
+
+      <div data-scroll-section>
         <HeroSection />
       </div>
 

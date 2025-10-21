@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import { ArrowRight, Users, Workflow, Bot, CheckCircle, Target, Calendar, BarChart3, Zap, MessageSquare, Settings } from 'lucide-react';
+import ProblemSection from "@/components/ProblemSection";
+import { ArrowRight, Users, Workflow, Bot, CheckCircle, Target, Calendar, BarChart3, Zap, MessageSquare, Settings, AlertTriangle, Clock, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'Marketing Project Orchestration | Multi-Agent Campaign Management',
     description: 'Launch comprehensive marketing campaigns with coordinated AI agents across all channels. Automate execution and tracking.',
     type: 'website',
-    url: 'https://vautomate.ai/marketing-project-orchestration',
+    url: 'https://growth.vautomate.ai/marketing-project-orchestration',
     images: [
       {
         url: '/opengraph-image.png',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   alternates: {
-    canonical: 'https://vautomate.ai/marketing-project-orchestration',
+    canonical: 'https://growth.vautomate.ai/marketing-project-orchestration',
   },
 }
 
@@ -51,6 +52,34 @@ export default function MarketingProjectOrchestrationPage() {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
+
+      {/* Problem Section */}
+      <ProblemSection
+        title="Marketing Projects Lack Coordination"
+        description="Most marketing teams and agencies struggle with project fragmentation, unclear priorities, and inconsistent execution across client campaigns and channels."
+        problems={[
+          {
+            icon: <Workflow className="w-6 h-6 text-red-600" />,
+            title: "Fragmented Execution",
+            description: "Marketing projects span multiple tools, team members, and client accounts, leading to coordination challenges and missed deadlines."
+          },
+          {
+            icon: <Users className="w-6 h-6 text-red-600" />,
+            title: "Unclear Priorities",
+            description: "Without centralized project visibility across client portfolios, teams often work on low-impact tasks while high-value opportunities slip away."
+          },
+          {
+            icon: <Clock className="w-6 h-6 text-red-600" />,
+            title: "Inefficient Resource Use",
+            description: "Team members often duplicate work across client accounts or wait for approvals, wasting valuable time and creative energy."
+          }
+        ]}
+        stats={[
+          { number: "23%", label: "project delays" },
+          { number: "40%", label: "resource waste" },
+          { number: "5", label: "tools per project" }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{

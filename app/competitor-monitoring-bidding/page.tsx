@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import { ArrowRight, Eye, Target, TrendingUp, Zap, CheckCircle, AlertTriangle, DollarSign, Activity, Shield } from 'lucide-react';
+import ProblemSection from "@/components/ProblemSection";
+import { ArrowRight, Eye, Target, TrendingUp, Zap, CheckCircle, AlertTriangle, DollarSign, Activity, Shield, Clock, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'Competitor Monitoring with Automated Bidding | Competitive Intelligence',
     description: 'Stay ahead of competitors with AI-powered monitoring and automated bid adjustments for optimal ad performance.',
     type: 'website',
-    url: 'https://vautomate.ai/competitor-monitoring-bidding',
+    url: 'https://growth.vautomate.ai/competitor-monitoring-bidding',
     images: [
       {
         url: '/opengraph-image.png',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   alternates: {
-    canonical: 'https://vautomate.ai/competitor-monitoring-bidding',
+    canonical: 'https://growth.vautomate.ai/competitor-monitoring-bidding',
   },
 }
 
@@ -51,6 +52,34 @@ export default function CompetitorMonitoringBiddingPage() {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
+
+      {/* Problem Section */}
+      <ProblemSection
+        title="Competitor Intelligence is Manual & Incomplete"
+        description="Most e-commerce stores rely on sporadic manual research and basic tools, missing critical opportunities to outmaneuver competitors in real-time."
+        problems={[
+          {
+            icon: <Clock className="w-6 h-6 text-red-600" />,
+            title: "Time-Consuming Research",
+            description: "Hours spent manually tracking competitor prices, promotions, and strategy changes across multiple platforms."
+          },
+          {
+            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
+            title: "Delayed Responses",
+            description: "By the time you notice competitor moves, it's often too late to respond effectively in fast-moving markets."
+          },
+          {
+            icon: <Eye className="w-6 h-6 text-red-600" />,
+            title: "Incomplete Market View",
+            description: "Traditional tools miss critical data points and emerging trends that could impact your competitive position."
+          }
+        ]}
+        stats={[
+          { number: "6hrs", label: "weekly research time" },
+          { number: "2-3", label: "days response delay" },
+          { number: "35%", label: "missed opportunities" }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{

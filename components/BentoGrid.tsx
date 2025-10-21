@@ -18,7 +18,7 @@ const features = [
       "Get comprehensive reports on performance, growth trends, and channel metrics delivered every week without lifting a finger.",
     icon: BarChart3,
     size: "large",
-    image: "http://vautomate.ai/automated.png",
+    image: "http://growth.vautomate.ai/automated.png",
   },
   {
     title: "Conversational Analytics",
@@ -26,7 +26,7 @@ const features = [
       "Chat naturally with specialized AI agents to get instant answers.",
     icon: MessageSquare,
     size: "small",
-    image: "http://vautomate.ai/analytics.png", // ✅ custom image for analytics
+    image: "http://growth.vautomate.ai/analytics.png", // ✅ custom image for analytics
   },
   {
     title: "Actionable Projects",
@@ -34,7 +34,7 @@ const features = [
       "Structured growth tasks with clear execution paths handled automatically.",
     icon: Target,
     size: "small",
-    image: "http://vautomate.ai/projects_card.png",
+    image: "http://growth.vautomate.ai/projects_card.png",
   },
   {
     title: "Campaign Automation",
@@ -42,21 +42,21 @@ const features = [
       "Weekly insights drive automated marketing plans. Approve once, and watch AI execute your growth strategy.",
     icon: Bot,
     size: "medium",
-    image: "http://vautomate.ai/campaign.png",
+    image: "http://growth.vautomate.ai/campaign.png",
   },
   {
     title: "Benchmarking",
     description: "Compare against market averages and competitors.",
     icon: TrendingUp,
     size: "small",
-    image: "http://vautomate.ai/benchmarking.png",
+    image: "http://growth.vautomate.ai/benchmarking.png",
   },
   {
     title: "Hands-Free",
     description: "You approve, we execute automatically.",
     icon: Zap,
     size: "small",
-    image: "http://vautomate.ai/hands.png",
+    image: "http://growth.vautomate.ai/hands.png",
   },
 ];
 

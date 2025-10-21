@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import { ArrowRight, DollarSign, Package, TrendingDown, Zap, CheckCircle, Target, ShoppingCart, Percent, AlertTriangle } from 'lucide-react';
+import ProblemSection from "@/components/ProblemSection";
+import { ArrowRight, DollarSign, Package, TrendingDown, Zap, CheckCircle, Target, ShoppingCart, Percent, AlertTriangle, Clock } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'SKU-Level Pricing & Promotion Adjustments | Dynamic Pricing Intelligence',
     description: 'Transform your pricing strategy with AI-powered inventory analysis and automated discount campaigns.',
     type: 'website',
-    url: 'https://vautomate.ai/sku-pricing-promotions',
+    url: 'https://growth.vautomate.ai/sku-pricing-promotions',
     images: [
       {
         url: '/opengraph-image.png',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   alternates: {
-    canonical: 'https://vautomate.ai/sku-pricing-promotions',
+    canonical: 'https://growth.vautomate.ai/sku-pricing-promotions',
   },
 }
 
@@ -51,6 +52,34 @@ export default function SKU_PricingPromotionsPage() {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
+
+      {/* Problem Section */}
+      <ProblemSection
+        title="Pricing & Promotions are Complex & Risky"
+        description="Most e-commerce stores struggle with dynamic pricing strategies, seasonal promotions, and inventory management that directly impact profitability."
+        problems={[
+          {
+            icon: <Package className="w-6 h-6 text-red-600" />,
+            title: "Inventory Management Complexity",
+            description: "Managing thousands of SKUs with different pricing rules, seasonal demands, and stock levels creates operational chaos."
+          },
+          {
+            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
+            title: "Revenue Leakage",
+            description: "Static pricing misses opportunities for dynamic adjustments based on demand, competition, and market conditions."
+          },
+          {
+            icon: <Clock className="w-6 h-6 text-red-600" />,
+            title: "Manual Promotion Planning",
+            description: "Creating and managing promotions across multiple channels requires extensive manual work and coordination."
+          }
+        ]}
+        stats={[
+          { number: "23%", label: "missed pricing opportunities" },
+          { number: "18%", label: "inventory inefficiency" },
+          { number: "12hrs", label: "weekly planning time" }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{

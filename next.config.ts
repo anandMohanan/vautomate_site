@@ -11,13 +11,13 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'vautomate.ai',
+        hostname: 'growth.vautomate.ai',
         port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'cdn.vautomate.ai',
+        hostname: 'cdn.growth.vautomate.ai',
         port: '',
         pathname: '/**',
       }
