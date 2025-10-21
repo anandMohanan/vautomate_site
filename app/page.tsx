@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BentoGrid from "@/components/BentoGrid";
 import ProductShowcase from "@/components/ProductShowcase";
+import UseCasesSection from "@/components/UseCasesSection";
 import HowItWorks from "@/components/HowItWorks";
 import SocialProof from "@/components/SocialProof";
 import Pricing from "@/components/Pricing";
@@ -59,6 +60,10 @@ export default function LandingPage() {
 
       <div data-scroll-section>
         <ProductShowcase />
+      </div>
+
+      <div data-scroll-section>
+        <UseCasesSection />
       </div>
 
       <div data-scroll-section>

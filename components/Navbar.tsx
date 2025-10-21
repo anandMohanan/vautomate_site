@@ -58,9 +58,11 @@ export default function Navbar() {
           <div className="w-10 h-10 bg-primary-foreground border-none flex items-center justify-center  transform transition-transform hover:scale-105">
 <Image src="/logo.png" alt="Vautomate" width={30} height={30} />
           </div>
-          <span className="text-xl text-black tracking-tight font-serif">
-            Vautomate
-          </span>
+          <Link href="/" className="text-xl text-black tracking-tight font-serif">
+            <span className="text-xl text-black tracking-tight font-serif">
+              Vautomate
+            </span>
+          </Link>
         </div>
 
         {/* Desktop Nav */}
