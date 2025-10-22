@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import ProblemSection from "@/components/ProblemSection";
+import CombinedUseCaseSection from "@/components/CombinedUseCaseSection";
 import { ArrowRight, Users, Workflow, Bot, CheckCircle, Target, Calendar, BarChart3, Zap, MessageSquare, Settings, AlertTriangle, Clock, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,128 +53,31 @@ export default function MarketingProjectOrchestrationPage() {
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
 
-      {/* Problem Section */}
-      <ProblemSection
-        title="Marketing Projects Lack Coordination"
-        description="Most marketing teams and agencies struggle with project fragmentation, unclear priorities, and inconsistent execution across client campaigns and channels."
+      <CombinedUseCaseSection
+        badgeIcon={<Workflow className="w-4 h-4" />}
+        badgeText="Multi-Agent Collaboration"
+        title="Orchestrate Complex"
+        titleAccent="Marketing Projects"
+        description="Create comprehensive marketing campaigns across multiple channels with AI agents that coordinate Meta ads, Google Search, email sequences, and track everything in one place."
+        ctaText="Launch Project"
+        problemsTitle="The Problem"
+        problemsDescription="Most marketing teams and agencies struggle with project fragmentation, unclear priorities, and inconsistent execution across client campaigns and channels."
         problems={[
-          {
-            icon: <Workflow className="w-6 h-6 text-red-600" />,
-            title: "Fragmented Execution",
-            description: "Marketing projects span multiple tools, team members, and client accounts, leading to coordination challenges and missed deadlines."
-          },
-          {
-            icon: <Users className="w-6 h-6 text-red-600" />,
-            title: "Unclear Priorities",
-            description: "Without centralized project visibility across client portfolios, teams often work on low-impact tasks while high-value opportunities slip away."
-          },
-          {
-            icon: <Clock className="w-6 h-6 text-red-600" />,
-            title: "Inefficient Resource Use",
-            description: "Team members often duplicate work across client accounts or wait for approvals, wasting valuable time and creative energy."
-          }
+          { icon: <Workflow className="w-6 h-6 text-red-600" />, title: "Fragmented Execution", description: "Marketing projects span multiple tools, team members, and client accounts, leading to coordination challenges and missed deadlines." },
+          { icon: <Users className="w-6 h-6 text-red-600" />, title: "Unclear Priorities", description: "Without centralized project visibility across client portfolios, teams often work on low-impact tasks while high-value opportunities slip away." },
+          { icon: <Clock className="w-6 h-6 text-red-600" />, title: "Inefficient Resource Use", description: "Team members often duplicate work across client accounts or wait for approvals, wasting valuable time and creative energy." },
         ]}
         stats={[
-          { number: "23%", label: "project delays" },
-          { number: "40%", label: "resource waste" },
-          { number: "5", label: "tools per project" }
+          { number: "5x", label: "Faster Campaign Setup" },
+          { number: "92%", label: "Project Success Rate" },
+          { number: "24/7", label: "Agent Monitoring" },
+        ]}
+        illustrations={[
+          { icon: <Users className="w-6 h-6 text-primary-foreground" />, title: "Meta Agent Active", subtitle: "Remarketing campaign ready" },
+          { icon: <Target className="w-6 h-6 text-accent-foreground" />, title: "Google Agent Active", subtitle: "Search ads optimized", tone: 'secondary' },
+          { icon: <MessageSquare className="w-6 h-6 text-primary-foreground" />, title: "Email Agent Active", subtitle: "Sequence automation ready" },
         ]}
       />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{
-        background: "#ffffff",
-        backgroundImage: `
-          radial-gradient(
-            circle at top center,
-            rgba(255, 140, 60, 0.5),
-            transparent 70%
-          )
-        `,
-        backgroundRepeat: "no-repeat",
-      }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-4 py-2 text-secondary-foreground rounded-full text-sm font-medium mb-8 border border-border">
-                <Workflow className="w-4 h-4" />
-                <span className="tracking-tight">Multi-Agent Collaboration</span>
-              </div>
-
-              <h1 className="text-6xl md:text-7xl lg:text-8xl text-foreground mb-6 leading-[1.05] tracking-tight font-serif">
-                Orchestrate Complex
-                <span className="block mt-2">
-                  <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Marketing Projects</span>
-                </span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed font-light max-w-2xl">
-                Create comprehensive marketing campaigns across multiple channels with AI agents that coordinate Meta ads, Google Search, email sequences, and track everything in one place.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
-                <TallyButton size="lg" className="group flex">
-                  Launch Project
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </TallyButton>
-              
-              </div>
-
-              {/* Key Statistics */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">5x</div>
-                  <div className="text-muted-foreground text-sm">Faster Campaign Setup</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">92%</div>
-                  <div className="text-muted-foreground text-sm">Project Success Rate</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">24/7</div>
-                  <div className="text-muted-foreground text-sm">Agent Monitoring</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <Card className="rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
-                <CardContent className="space-y-6 p-0">
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Users className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Meta Agent Active</div>
-                      <div className="text-sm text-muted-foreground">Remarketing campaign ready</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                    <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Target className="w-6 h-6 text-accent-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Google Agent Active</div>
-                      <div className="text-sm text-muted-foreground">Search ads optimized</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MessageSquare className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Email Agent Active</div>
-                      <div className="text-sm text-muted-foreground">Sequence automation ready</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Demo Section */}
       <section className="py-20 px-6 bg-muted/20">

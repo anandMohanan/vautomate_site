@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import ProblemSection from "@/components/ProblemSection";
+import CombinedUseCaseSection from "@/components/CombinedUseCaseSection";
 import { ArrowRight, Palette, Image, Zap, CheckCircle, Target, Bot, Download, Upload, TrendingUp, AlertTriangle, Clock, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,130 +53,31 @@ export default function AutomatedCreativeGenerationPage() {
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
 
-      {/* Problem Section */}
-      <ProblemSection
-        title="Creative Production is Slow & Expensive"
-        description="Creating effective ad creatives, social media posts, and email campaigns takes days of design work and thousands in creative costs."
+      <CombinedUseCaseSection
+        badgeIcon={<Palette className="w-4 h-4" />}
+        badgeText="AI Creative Intelligence"
+        title="Generate & Deploy"
+        titleAccent="Ad Creatives"
+        description="Create winning Meta ad creatives automatically using top-performing content from previous campaigns. Generate variations with your brand tone and deploy them instantly."
+        ctaText="Generate Creatives"
+        problemsTitle="The Problem"
+        problemsDescription="Creating effective ad creatives, social media posts, and email campaigns takes days of design work and thousands in creative costs."
         problems={[
-          {
-            icon: <Clock className="w-6 h-6 text-red-600" />,
-            title: "Time-Intensive Process",
-            description: "Designers spend days creating variations and iterating based on performance data, slowing campaign launches."
-          },
-          {
-            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
-            title: "High Creative Costs",
-            description: "Professional design services and stock imagery eat into marketing budgets, especially for testing multiple variants."
-          },
-          {
-            icon: <Palette className="w-6 h-6 text-red-600" />,
-            title: "Inconsistent Branding",
-            description: "Maintaining brand consistency across all channels becomes challenging with manual creative processes."
-          }
+          { icon: <Clock className="w-6 h-6 text-red-600" />, title: "Time-Intensive Process", description: "Designers spend days creating variations and iterating based on performance data, slowing campaign launches." },
+          { icon: <TrendingDown className="w-6 h-6 text-red-600" />, title: "High Creative Costs", description: "Professional design services and stock imagery eat into marketing budgets, especially for testing multiple variants." },
+          { icon: <Palette className="w-6 h-6 text-red-600" />, title: "Inconsistent Branding", description: "Maintaining brand consistency across all channels becomes challenging with manual creative processes." },
         ]}
         stats={[
-          { number: "3-5", label: "days per creative" },
-          { number: "$2K", label: "avg creative cost" },
-          { number: "40%", label: "brand inconsistency" }
+          { number: "85%", label: "Faster Creative Production" },
+          { number: "3.2x", label: "Higher Engagement Rate" },
+          { number: "24/7", label: "Creative Generation" },
+        ]}
+        illustrations={[
+          { icon: <Palette className="w-6 h-6 text-primary-foreground" />, title: "3 Creatives Generated", subtitle: "Based on top performers" },
+          { icon: <Upload className="w-6 h-6 text-accent-foreground" />, title: "Deployed to Meta", subtitle: "Draft mode active", tone: 'secondary' },
+          { icon: <TrendingUp className="w-6 h-6 text-primary-foreground" />, title: "Performance Tracking", subtitle: "A/B testing enabled" },
         ]}
       />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{
-        background: "#ffffff",
-        backgroundImage: `
-          radial-gradient(
-            circle at top center,
-            rgba(255, 140, 60, 0.5),
-            transparent 70%
-          )
-        `,
-        backgroundRepeat: "no-repeat",
-      }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-4 py-2 text-secondary-foreground rounded-full text-sm font-medium mb-8 border border-border">
-                <Palette className="w-4 h-4" />
-                <span className="tracking-tight">AI Creative Intelligence</span>
-              </div>
-
-              <h1 className="text-6xl md:text-7xl lg:text-8xl text-foreground mb-6 leading-[1.05] tracking-tight font-serif">
-                Generate & Deploy
-                <span className="block mt-2">
-                  <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Ad Creatives</span>
-                </span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed font-light max-w-2xl">
-                Create winning Meta ad creatives automatically using top-performing content from previous campaigns. Generate variations with your brand tone and deploy them instantly.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
-                <TallyButton size="lg" className="group flex">
-                  Generate Creatives
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </TallyButton>
-                <Link href="/demo" className={cn(buttonVariants({ variant: "secondary", size: "lg" }))}>
-                  See Demo
-                </Link>
-              </div>
-
-              {/* Key Statistics */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">85%</div>
-                  <div className="text-muted-foreground text-sm">Faster Creative Production</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">3.2x</div>
-                  <div className="text-muted-foreground text-sm">Higher Engagement Rate</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">24/7</div>
-                  <div className="text-muted-foreground text-sm">Creative Generation</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <Card className="rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
-                <CardContent className="space-y-6 p-0">
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Palette className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">3 Creatives Generated</div>
-                      <div className="text-sm text-muted-foreground">Based on top performers</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                    <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Upload className="w-6 h-6 text-accent-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Deployed to Meta</div>
-                      <div className="text-sm text-muted-foreground">Draft mode active</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Performance Tracking</div>
-                      <div className="text-sm text-muted-foreground">A/B testing enabled</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Demo Section */}
       <section className="py-20 px-6 bg-muted/20">

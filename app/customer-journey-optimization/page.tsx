@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import ProblemSection from "@/components/ProblemSection";
+import CombinedUseCaseSection from "@/components/CombinedUseCaseSection";
 import { ArrowRight, TrendingUp, Funnel, Eye, ShoppingCart, CreditCard, Users, Target, Lightbulb, Zap, CheckCircle, MousePointer, AlertTriangle, Clock, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,128 +53,31 @@ export default function CustomerJourneyOptimizationPage() {
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
 
-      {/* Problem Section */}
-      <ProblemSection
-        title="Customer Journey is Complex & Opaque"
-        description="Most e-commerce stores struggle to understand how customers navigate their site, leading to poor conversion rates and missed revenue opportunities."
+      <CombinedUseCaseSection
+        badgeIcon={<Funnel className="w-4 h-4" />}
+        badgeText="Journey Intelligence"
+        title="Optimize Every Step"
+        titleAccent="of the Journey"
+        description="Identify where users drop off before checkout and get AI-powered suggestions to fix them. From traffic sources to conversion funnels, optimize the entire customer experience."
+        ctaText="Analyze Journey"
+        problemsTitle="The Problem"
+        problemsDescription="Most e-commerce stores struggle to understand how customers navigate their site, leading to poor conversion rates and missed revenue opportunities."
         problems={[
-          {
-            icon: <Funnel className="w-6 h-6 text-red-600" />,
-            title: "Conversion Leaks",
-            description: "Customers abandon carts and exit pages without clear understanding of why or where in the journey it happens."
-          },
-          {
-            icon: <Eye className="w-6 h-6 text-red-600" />,
-            title: "Invisible Customer Behavior",
-            description: "Traditional analytics provide surface-level data but miss the nuanced paths customers take through your store."
-          },
-          {
-            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
-            title: "Generic Optimization",
-            description: "Making changes based on assumptions rather than actual customer journey data leads to ineffective improvements."
-          }
+          { icon: <Funnel className="w-6 h-6 text-red-600" />, title: "Conversion Leaks", description: "Customers abandon carts and exit pages without clear understanding of why or where in the journey it happens." },
+          { icon: <Eye className="w-6 h-6 text-red-600" />, title: "Invisible Customer Behavior", description: "Traditional analytics provide surface-level data but miss the nuanced paths customers take through your store." },
+          { icon: <TrendingDown className="w-6 h-6 text-red-600" />, title: "Generic Optimization", description: "Making changes based on assumptions rather than actual customer journey data leads to ineffective improvements." },
         ]}
         stats={[
-          { number: "68%", label: "avg cart abandonment" },
-          { number: "73%", label: "bounce rate" },
-          { number: "$2.1T", label: "lost e-commerce revenue" }
+          { number: "34%", label: "Avg Conversion Improvement" },
+          { number: "127%", label: "More Insights vs Manual" },
+          { number: "24/7", label: "Journey Monitoring" },
+        ]}
+        illustrations={[
+          { icon: <Eye className="w-6 h-6 text-primary-foreground" />, title: "Traffic Analysis", subtitle: "User behavior insights" },
+          { icon: <ShoppingCart className="w-6 h-6 text-accent-foreground" />, title: "Cart Abandonment Fix", subtitle: "Drop-off solutions ready", tone: 'secondary' },
+          { icon: <CreditCard className="w-6 h-6 text-primary-foreground" />, title: "Conversion +34%", subtitle: "This month from optimizations" },
         ]}
       />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{
-        background: "#ffffff",
-        backgroundImage: `
-          radial-gradient(
-            circle at top center,
-            rgba(255, 140, 60, 0.5),
-            transparent 70%
-          )
-        `,
-        backgroundRepeat: "no-repeat",
-      }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-4 py-2 text-secondary-foreground rounded-full text-sm font-medium mb-8 border border-border">
-                <Funnel className="w-4 h-4" />
-                <span className="tracking-tight">Journey Intelligence</span>
-              </div>
-
-              <h1 className="text-6xl md:text-7xl lg:text-8xl text-foreground mb-6 leading-[1.05] tracking-tight font-serif">
-                Optimize Every Step
-                <span className="block mt-2">
-                  <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">of the Journey</span>
-                </span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed font-light max-w-2xl">
-                Identify where users drop off before checkout and get AI-powered suggestions to fix them. From traffic sources to conversion funnels, optimize the entire customer experience.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
-                <TallyButton size="lg" className="group flex">
-                  Analyze Journey
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </TallyButton>
-              
-              </div>
-
-              {/* Key Statistics */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">34%</div>
-                  <div className="text-muted-foreground text-sm">Avg Conversion Improvement</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">127%</div>
-                  <div className="text-muted-foreground text-sm">More Insights vs Manual</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">24/7</div>
-                  <div className="text-muted-foreground text-sm">Journey Monitoring</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <Card className="rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
-                <CardContent className="space-y-6 p-0">
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Eye className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Traffic Analysis</div>
-                      <div className="text-sm text-muted-foreground">User behavior insights</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                    <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                      <ShoppingCart className="w-6 h-6 text-accent-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Cart Abandonment Fix</div>
-                      <div className="text-sm text-muted-foreground">Drop-off solutions ready</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <CreditCard className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Conversion +34%</div>
-                      <div className="text-sm text-muted-foreground">This month from optimizations</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Demo Section */}
       <section className="py-20 px-6 bg-muted/20">

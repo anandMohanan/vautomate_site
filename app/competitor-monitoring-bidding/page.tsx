@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import ProblemSection from "@/components/ProblemSection";
+import CombinedUseCaseSection from "@/components/CombinedUseCaseSection";
 import { ArrowRight, Eye, Target, TrendingUp, Zap, CheckCircle, AlertTriangle, DollarSign, Activity, Shield, Clock, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,130 +53,31 @@ export default function CompetitorMonitoringBiddingPage() {
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
 
-      {/* Problem Section */}
-      <ProblemSection
-        title="Competitor Intelligence is Manual & Incomplete"
-        description="Most e-commerce stores rely on sporadic manual research and basic tools, missing critical opportunities to outmaneuver competitors in real-time."
+      <CombinedUseCaseSection
+        badgeIcon={<Eye className="w-4 h-4" />}
+        badgeText="Competitive Intelligence"
+        title="Monitor & Adapt"
+        titleAccent="to Competition"
+        description="Track competitor pricing and ad performance in real-time. Automatically adjust Google Ads bids to maintain your competitive edge with 24/7 adaptive campaign management."
+        ctaText="Monitor Competition"
+        problemsTitle="The Problem"
+        problemsDescription="Most e-commerce stores rely on sporadic manual research and basic tools, missing critical opportunities to outmaneuver competitors in real-time."
         problems={[
-          {
-            icon: <Clock className="w-6 h-6 text-red-600" />,
-            title: "Time-Consuming Research",
-            description: "Hours spent manually tracking competitor prices, promotions, and strategy changes across multiple platforms."
-          },
-          {
-            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
-            title: "Delayed Responses",
-            description: "By the time you notice competitor moves, it's often too late to respond effectively in fast-moving markets."
-          },
-          {
-            icon: <Eye className="w-6 h-6 text-red-600" />,
-            title: "Incomplete Market View",
-            description: "Traditional tools miss critical data points and emerging trends that could impact your competitive position."
-          }
+          { icon: <Clock className="w-6 h-6 text-red-600" />, title: "Time-Consuming Research", description: "Hours spent manually tracking competitor prices, promotions, and strategy changes across multiple platforms." },
+          { icon: <TrendingDown className="w-6 h-6 text-red-600" />, title: "Delayed Responses", description: "By the time you notice competitor moves, it's often too late to respond effectively in fast-moving markets." },
+          { icon: <Eye className="w-6 h-6 text-red-600" />, title: "Incomplete Market View", description: "Traditional tools miss critical data points and emerging trends that could impact your competitive position." },
         ]}
         stats={[
-          { number: "6hrs", label: "weekly research time" },
-          { number: "2-3", label: "days response delay" },
-          { number: "35%", label: "missed opportunities" }
+          { number: "37%", label: "Better CPC Performance" },
+          { number: "24/7", label: "Competitor Tracking" },
+          { number: "5min", label: "Response Time" },
+        ]}
+        illustrations={[
+          { icon: <Eye className="w-6 h-6 text-primary-foreground" />, title: "Competitors Monitored", subtitle: "47 active competitors" },
+          { icon: <Target className="w-6 h-6 text-accent-foreground" />, title: "Bids Auto-Adjusted", subtitle: "12 campaigns optimized", tone: 'secondary' },
+          { icon: <DollarSign className="w-6 h-6 text-primary-foreground" />, title: "$2.3K Saved", subtitle: "This month vs manual" },
         ]}
       />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{
-        background: "#ffffff",
-        backgroundImage: `
-          radial-gradient(
-            circle at top center,
-            rgba(255, 140, 60, 0.5),
-            transparent 70%
-          )
-        `,
-        backgroundRepeat: "no-repeat",
-      }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-4 py-2 text-secondary-foreground rounded-full text-sm font-medium mb-8 border border-border">
-                <Eye className="w-4 h-4" />
-                <span className="tracking-tight">Competitive Intelligence</span>
-              </div>
-
-              <h1 className="text-6xl md:text-7xl lg:text-8xl text-foreground mb-6 leading-[1.05] tracking-tight font-serif">
-                Monitor & Adapt
-                <span className="block mt-2">
-                  <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">to Competition</span>
-                </span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed font-light max-w-2xl">
-                Track competitor pricing and ad performance in real-time. Automatically adjust Google Ads bids to maintain your competitive edge with 24/7 adaptive campaign management.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
-                <TallyButton size="lg" className="group flex">
-                  Monitor Competition
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </TallyButton>
-                <Link href="/demo" className={cn(buttonVariants({ variant: "secondary", size: "lg" }))}>
-                  See Demo
-                </Link>
-              </div>
-
-              {/* Key Statistics */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">37%</div>
-                  <div className="text-muted-foreground text-sm">Better CPC Performance</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">24/7</div>
-                  <div className="text-muted-foreground text-sm">Competitor Tracking</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">5min</div>
-                  <div className="text-muted-foreground text-sm">Response Time</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <Card className="rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
-                <CardContent className="space-y-6 p-0">
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Eye className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Competitors Monitored</div>
-                      <div className="text-sm text-muted-foreground">47 active competitors</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                    <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Target className="w-6 h-6 text-accent-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Bids Auto-Adjusted</div>
-                      <div className="text-sm text-muted-foreground">12 campaigns optimized</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <DollarSign className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">$2.3K Saved</div>
-                      <div className="text-sm text-muted-foreground">This month vs manual</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Demo Section */}
       <section className="py-20 px-6 bg-muted/20">

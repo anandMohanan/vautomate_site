@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import ProblemSection from "@/components/ProblemSection";
+import CombinedUseCaseSection from "@/components/CombinedUseCaseSection";
 import { ArrowRight, TrendingUp, Search, FileText, ShoppingBag, BarChart3, Zap, CheckCircle, Target, Lightbulb, Globe, TrendingDown, Clock, AlertTriangle } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,128 +53,31 @@ export default function SEOContentShopifyInsightsPage() {
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
 
-      {/* Problem Section */}
-      <ProblemSection
-        title="SEO & Content Creation is Disconnected"
-        description="Most e-commerce businesses and agencies create content in isolation, missing critical insights about which client products have sales potential but lack organic visibility."
+      <CombinedUseCaseSection
+        badgeIcon={<Search className="w-4 h-4" />}
+        badgeText="SEO & Content Intelligence"
+        title="Bridge SEO & Ecommerce"
+        titleAccent="Data Insights"
+        description="Discover which products have massive sales potential but low organic traffic. Get AI-generated keyword recommendations and blog briefs to drive organic growth."
+        ctaText="Unlock SEO Insights"
+        problemsTitle="The Problem"
+        problemsDescription="Most e-commerce businesses and agencies create content in isolation, missing critical insights about which client products have sales potential but lack organic visibility."
         problems={[
-          {
-            icon: <Search className="w-6 h-6 text-red-600" />,
-            title: "Content Gaps",
-            description: "High-potential client products remain invisible because you don't know which keywords and topics will drive organic traffic across portfolios."
-          },
-          {
-            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
-            title: "Missed Organic Opportunities",
-            description: "Client products with proven sales data aren't optimized for search, leaving organic growth potential untapped across accounts."
-          },
-          {
-            icon: <Clock className="w-6 h-6 text-red-600" />,
-            title: "Inefficient Content Strategy",
-            description: "Creating content across client accounts without data-driven insights leads to poor ROI and wasted effort on low-impact topics."
-          }
+          { icon: <Search className="w-6 h-6 text-red-600" />, title: "Content Gaps", description: "High-potential client products remain invisible because you don't know which keywords and topics will drive organic traffic across portfolios." },
+          { icon: <TrendingDown className="w-6 h-6 text-red-600" />, title: "Missed Organic Opportunities", description: "Client products with proven sales data aren't optimized for search, leaving organic growth potential untapped across accounts." },
+          { icon: <Clock className="w-6 h-6 text-red-600" />, title: "Inefficient Content Strategy", description: "Creating content across client accounts without data-driven insights leads to poor ROI and wasted effort on low-impact topics." },
         ]}
         stats={[
-          { number: "67%", label: "untapped organic traffic" },
-          { number: "40%", label: "content inefficiency" },
-          { number: "12hrs", label: "wasted weekly" }
+          { number: "67%", label: "Avg Organic Traffic Increase" },
+          { number: "200+", label: "Keywords per Product" },
+          { number: "3hrs", label: "Research Time Saved" },
+        ]}
+        illustrations={[
+          { icon: <TrendingUp className="w-6 h-6 text-primary-foreground" />, title: "Organic Traffic +156%", subtitle: "Content gap analysis" },
+          { icon: <Search className="w-6 h-6 text-accent-foreground" />, title: "47 High-Potential Keywords", subtitle: "Identified for top products", tone: 'secondary' },
+          { icon: <FileText className="w-6 h-6 text-primary-foreground" />, title: "12 Blog Posts Created", subtitle: "AI-generated briefs ready" },
         ]}
       />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{
-        background: "#ffffff",
-        backgroundImage: `
-          radial-gradient(
-            circle at top center,
-            rgba(255, 140, 60, 0.5),
-            transparent 70%
-          )
-        `,
-        backgroundRepeat: "no-repeat",
-      }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-4 py-2 text-secondary-foreground rounded-full text-sm font-medium mb-8 border border-border">
-                <Search className="w-4 h-4" />
-                <span className="tracking-tight">SEO & Content Intelligence</span>
-              </div>
-
-              <h1 className="text-6xl md:text-7xl lg:text-8xl text-foreground mb-6 leading-[1.05] tracking-tight font-serif">
-                Bridge SEO & Ecommerce
-                <span className="block mt-2">
-                  <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Data Insights</span>
-                </span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed font-light max-w-2xl">
-                Discover which products have massive sales potential but low organic traffic. Get AI-generated keyword recommendations and blog briefs to drive organic growth.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
-                <TallyButton size="lg" className="group flex">
-                  Unlock SEO Insights
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </TallyButton>
-              
-              </div>
-
-              {/* Key Statistics */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">67%</div>
-                  <div className="text-muted-foreground text-sm">Avg Organic Traffic Increase</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">200+</div>
-                  <div className="text-muted-foreground text-sm">Keywords per Product</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">3hrs</div>
-                  <div className="text-muted-foreground text-sm">Research Time Saved</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <Card className="rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
-                <CardContent className="space-y-6 p-0">
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Organic Traffic +156%</div>
-                      <div className="text-sm text-muted-foreground">Content gap analysis</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                    <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Search className="w-6 h-6 text-accent-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">47 High-Potential Keywords</div>
-                      <div className="text-sm text-muted-foreground">Identified for top products</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <FileText className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">12 Blog Posts Created</div>
-                      <div className="text-sm text-muted-foreground">AI-generated briefs ready</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Demo Section */}
       <section className="py-20 px-6 bg-muted/20">

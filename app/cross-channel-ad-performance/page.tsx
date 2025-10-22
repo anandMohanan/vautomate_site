@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import ProblemSection from "@/components/ProblemSection";
+import CombinedUseCaseSection from "@/components/CombinedUseCaseSection";
 import { ArrowRight, TrendingUp, Target, BarChart3, Zap, CheckCircle, Users, DollarSign, AlertTriangle, TrendingDown, Clock } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,130 +53,31 @@ export default function CrossChannelAdPerformancePage() {
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
 
-      {/* Problem Section */}
-      <ProblemSection
-        title="Ad Performance Tracking is Fragmented"
-        description="Managing campaigns across Meta and Google Ads without unified insights leads to overspending, missed opportunities, and inaccurate ROAS calculations across client accounts."
+      <CombinedUseCaseSection
+        badgeIcon={<TrendingUp className="w-4 h-4" />}
+        badgeText="Cross-Channel Ad Intelligence"
+        title="Unify Your Ad Performance"
+        titleAccent="Across All Channels"
+        description="Get instant insights into which campaigns across Meta and Google Ads deliver the highest ROAS. Automatically pause underperforming ad sets and optimize your spend."
+        ctaText="Get Started Free"
+        problemsTitle="The Problem"
+        problemsDescription="Managing campaigns across Meta and Google Ads without unified insights leads to overspending, missed opportunities, and inaccurate ROAS calculations across client accounts."
         problems={[
-          {
-            icon: <TrendingDown className="w-6 h-6 text-red-600" />,
-            title: "Inaccurate ROAS Tracking",
-            description: "Without unified attribution across client accounts, you're making decisions based on incomplete data, leading to poor campaign performance."
-          },
-          {
-            icon: <Clock className="w-6 h-6 text-red-600" />,
-            title: "Manual Campaign Management",
-            description: "Spending hours daily monitoring and adjusting campaigns across multiple client platforms instead of focusing on strategic growth."
-          },
-          {
-            icon: <DollarSign className="w-6 h-6 text-red-600" />,
-            title: "Wasted Ad Spend",
-            description: "Underperforming campaigns continue running across client accounts because you can't identify them quickly enough across channels."
-          }
+          { icon: <TrendingDown className="w-6 h-6 text-red-600" />, title: "Inaccurate ROAS Tracking", description: "Without unified attribution across client accounts, you're making decisions based on incomplete data, leading to poor campaign performance." },
+          { icon: <Clock className="w-6 h-6 text-red-600" />, title: "Manual Campaign Management", description: "Spending hours daily monitoring and adjusting campaigns across multiple client platforms instead of focusing on strategic growth." },
+          { icon: <DollarSign className="w-6 h-6 text-red-600" />, title: "Wasted Ad Spend", description: "Underperforming campaigns continue running across client accounts because you can't identify them quickly enough across channels." },
         ]}
         stats={[
-          { number: "40%", label: "ROAS inaccuracy" },
-          { number: "5hrs", label: "daily monitoring" },
-          { number: "$8K", label: "monthly waste" }
+          { number: "3.2x", label: "Higher ROAS Accuracy" },
+          { number: "15min", label: "Setup Time" },
+          { number: "24/7", label: "Performance Monitoring" },
+        ]}
+        illustrations={[
+          { icon: <TrendingUp className="w-6 h-6 text-primary-foreground" />, title: "Campaign ROAS: 4.2x", subtitle: "Meta + Google combined" },
+          { icon: <Target className="w-6 h-6 text-accent-foreground" />, title: "3 Ad Sets Paused", subtitle: "Low performance auto-detected", tone: 'secondary' },
+          { icon: <BarChart3 className="w-6 h-6 text-primary-foreground" />, title: "$12.4K Saved", subtitle: "This month from optimizations" },
         ]}
       />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{
-        background: "#ffffff",
-        backgroundImage: `
-          radial-gradient(
-            circle at top center,
-            rgba(255, 140, 60, 0.5),
-            transparent 70%
-          )
-        `,
-        backgroundRepeat: "no-repeat",
-      }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-4 py-2 text-secondary-foreground rounded-full text-sm font-medium mb-8 border border-border">
-                <TrendingUp className="w-4 h-4" />
-                <span className="tracking-tight">Cross-Channel Ad Intelligence</span>
-              </div>
-
-              <h1 className="text-6xl md:text-7xl lg:text-8xl text-foreground mb-6 leading-[1.05] tracking-tight font-serif">
-                Unify Your Ad Performance
-                <span className="block mt-2">
-                  <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Across All Channels</span>
-                </span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed font-light max-w-2xl">
-                Get instant insights into which campaigns across Meta and Google Ads deliver the highest ROAS. Automatically pause underperforming ad sets and optimize your spend.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
-                <TallyButton size="lg" className="group flex">
-                  Get Started Free
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </TallyButton>
-                <Link href="/demo" className={cn(buttonVariants({ variant: "secondary", size: "lg" }))}>
-                  Watch Demo
-                </Link>
-              </div>
-
-              {/* Key Statistics */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">3.2x</div>
-                  <div className="text-muted-foreground text-sm">Higher ROAS Accuracy</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">15min</div>
-                  <div className="text-muted-foreground text-sm">Setup Time</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">24/7</div>
-                  <div className="text-muted-foreground text-sm">Performance Monitoring</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <Card className="rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
-                <CardContent className="space-y-6 p-0">
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">Campaign ROAS: 4.2x</div>
-                      <div className="text-sm text-muted-foreground">Meta + Google combined</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                    <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Target className="w-6 h-6 text-accent-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">3 Ad Sets Paused</div>
-                      <div className="text-sm text-muted-foreground">Low performance auto-detected</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <BarChart3 className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">$12.4K Saved</div>
-                      <div className="text-sm text-muted-foreground">This month from optimizations</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Demo Section */}
       <section className="py-20 px-6 bg-muted/20">

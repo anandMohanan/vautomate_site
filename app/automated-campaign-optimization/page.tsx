@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Navbar from "@/components/Navbar";
-import ProblemSection from "@/components/ProblemSection";
+import CombinedUseCaseSection from "@/components/CombinedUseCaseSection";
 import { ArrowRight, TrendingUp, Target, BarChart3, Zap, CheckCircle, Users, DollarSign, Settings, Brain, Clock, AlertTriangle, TrendingDown } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,10 +53,15 @@ export default function AutomatedCampaignOptimizationPage() {
     <div className="relative w-full min-h-screen bg-white">
       <Navbar />
 
-      {/* Problem Section */}
-      <ProblemSection
-        title="Campaign Optimization is Manual & Inefficient"
-        description="Most marketing teams and agencies spend hours manually analyzing campaign performance across client accounts, making optimization decisions based on gut feeling rather than data-driven insights."
+      <CombinedUseCaseSection
+        badgeIcon={<Brain className="w-4 h-4" />}
+        badgeText="AI Campaign Intelligence"
+        title="Optimize Campaigns"
+        titleAccent="Automatically"
+        description="Let AI analyze your campaign performance and suggest optimizations. From bid adjustments to creative improvements, get data-driven recommendations that boost ROI."
+        ctaText="Start Optimizing"
+        problemsTitle="The Problem"
+        problemsDescription="Most marketing teams and agencies spend hours manually analyzing campaign performance across client accounts, making optimization decisions based on gut feeling rather than data-driven insights."
         problems={[
           {
             icon: <Clock className="w-6 h-6 text-red-600" />,
@@ -79,102 +84,12 @@ export default function AutomatedCampaignOptimizationPage() {
           { number: "23%", label: "missed optimizations" },
           { number: "$15K", label: "monthly budget waste" }
         ]}
+        illustrations={[
+          { icon: <TrendingUp className="w-6 h-6 text-primary-foreground" />, title: "CTR Improved +32%", subtitle: "Ad creative optimization" },
+          { icon: <Target className="w-6 h-6 text-accent-foreground" />, title: "CPA Reduced -28%", subtitle: "Bid strategy refinement", tone: 'secondary' },
+          { icon: <DollarSign className="w-6 h-6 text-primary-foreground" />, title: "$8.5K Saved", subtitle: "This month from optimizations" },
+        ]}
       />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{
-        background: "#ffffff",
-        backgroundImage: `
-          radial-gradient(
-            circle at top center,
-            rgba(255, 140, 60, 0.5),
-            transparent 70%
-          )
-        `,
-        backgroundRepeat: "no-repeat",
-      }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-4 py-2 text-secondary-foreground rounded-full text-sm font-medium mb-8 border border-border">
-                <Brain className="w-4 h-4" />
-                <span className="tracking-tight">AI Campaign Intelligence</span>
-              </div>
-
-              <h1 className="text-6xl md:text-7xl lg:text-8xl text-foreground mb-6 leading-[1.05] tracking-tight font-serif">
-                Optimize Campaigns
-                <span className="block mt-2">
-                  <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Automatically</span>
-                </span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed font-light max-w-2xl">
-                Let AI analyze your campaign performance and suggest optimizations. From bid adjustments to creative improvements, get data-driven recommendations that boost ROI.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
-                <TallyButton size="lg" className="group flex">
-                  Start Optimizing
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </TallyButton>
-            
-              </div>
-
-              {/* Key Statistics */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">47%</div>
-                  <div className="text-muted-foreground text-sm">Avg Performance Improvement</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">5min</div>
-                  <div className="text-muted-foreground text-sm">Time to First Insight</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-3xl font-bold text-foreground mb-1 font-serif">∞</div>
-                  <div className="text-muted-foreground text-sm">Optimization Possibilities</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <Card className="rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
-                <CardContent className="space-y-6 p-0">
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">CTR Improved +32%</div>
-                      <div className="text-sm text-muted-foreground">Ad creative optimization</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                    <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Target className="w-6 h-6 text-accent-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">CPA Reduced -28%</div>
-                      <div className="text-sm text-muted-foreground">Bid strategy refinement</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 bg-muted rounded-xl">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <DollarSign className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground mb-1">$8.5K Saved</div>
-                      <div className="text-sm text-muted-foreground">This month from optimizations</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Demo Section */}
       <section className="py-20 px-6 bg-muted/20">
